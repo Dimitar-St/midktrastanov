@@ -23,7 +23,7 @@ services:
       database:
         condition: service_healthy
     environment:
-      PORT: "8080"
+      PORT: "8081"
       FRONTEND_ORIGIN: http://localhost:5173,http://localhost:8787
       DATABASE_URL: postgres://${POSTGRES_USER:-buldez}:${POSTGRES_PASSWORD:-change-me}@database:5432/${POSTGRES_DB:-buldez}?sslmode=disable
       BACKEND_API_TOKEN: ${BACKEND_API_TOKEN:-local-development-token}
