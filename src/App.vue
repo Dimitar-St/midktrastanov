@@ -25,7 +25,7 @@ onUnmounted(() => window.removeEventListener('session-expired', expired))
  <Login v-else-if="!user" @authenticated="signedIn" />
  <template v-else>
   <aside class="sidebar">
-   <RouterLink to="/day" class="brand"><span class="logo"><UserRound :size="21" aria-hidden="true" /></span><span>MidKrastanov<small>График на посещенията</small></span></RouterLink>
+   <RouterLink to="/day" class="brand"><span class="logo"><UserRound :size="21" aria-hidden="true" /></span><span>MidKrastsanov<small>График на посещенията</small></span></RouterLink>
    <nav class="main-nav">
     <RouterLink to="/day"><CalendarDays :size="19" />График</RouterLink>
      <RouterLink to="/week"><CalendarRange :size="19" />Седмица</RouterLink>
