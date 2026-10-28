@@ -535,6 +535,11 @@ func (s *Server) createEvent(w http.ResponseWriter, r *http.Request, user User) 
 		fail(w, http.StatusInternalServerError, "Could not create event")
 		return
 	}
+	assignedTo := ""
+	if event.AssignedTo != nil {
+		assignedTo = *event.AssignedTo
+	}
+	log.Printf("event created event_id=%s company_id=%s created_by=%s assigned_to=%s starts_at=%s recurrence_months=%d", event.ID, user.Company.ID, user.ID, assignedTo, event.StartsAt.Format(time.RFC3339), event.RecurrenceMonths)
 	write(w, http.StatusCreated, event)
 }
 
