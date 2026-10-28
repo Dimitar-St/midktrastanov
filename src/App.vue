@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { Calendar, CalendarDays, CalendarRange, LogOut, Map, MapPinned, Plus } from 'lucide-vue-next'
+import { Calendar, CalendarDays, CalendarRange, LogOut, Map, MapPinned, Plus, UserRound } from 'lucide-vue-next'
 import Login from './Login.vue'
 import { api, clearSession, sessionToken, type User } from './api'
 
@@ -25,7 +25,7 @@ onUnmounted(() => window.removeEventListener('session-expired', expired))
  <Login v-else-if="!user" @authenticated="signedIn" />
  <template v-else>
   <aside class="sidebar">
-   <RouterLink to="/day" class="brand"><span class="logo">ДДД</span><span>БулДез Контрол<small>График на посещенията</small></span></RouterLink>
+   <RouterLink to="/day" class="brand"><span class="logo"><UserRound :size="21" aria-hidden="true" /></span><span>MidKrastanov<small>График на посещенията</small></span></RouterLink>
    <nav class="main-nav">
     <RouterLink to="/day"><CalendarDays :size="19" />График</RouterLink>
      <RouterLink to="/week"><CalendarRange :size="19" />Седмица</RouterLink>
