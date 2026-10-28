@@ -37,7 +37,6 @@ onUnmounted(() => window.removeEventListener('session-expired', expired))
    <div class="account"><span class="avatar">{{ user.name.slice(0, 2).toUpperCase() }}</span><div><strong>{{ user.name }}</strong><small>{{ user.username }}</small></div><button aria-label="Изход" title="Изход" @click="signOut"><LogOut :size="17" /></button></div>
   </aside>
   <div class="shell">
-   <header class="topbar"><span>Планиране на обработки</span><strong class="company-name">{{ user.company?.name }}</strong></header>
    <main><RouterView /></main>
   </div>
   <nav class="mobile-nav"><RouterLink to="/day"><CalendarDays :size="19" />График</RouterLink><RouterLink to="/month"><Calendar :size="19" />Месец</RouterLink><RouterLink to="/addresses"><MapPinned :size="19" />Адреси</RouterLink><RouterLink to="/map"><Map :size="19" />Карта</RouterLink><RouterLink to="/events/new"><Plus :size="19" />Ново</RouterLink></nav>
